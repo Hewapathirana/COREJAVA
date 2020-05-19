@@ -20,8 +20,8 @@ public class Main {
         System.out.println("x = " + x + " Y = " +y + " Z = " +z);
     }
 
-
     public static void main(String[] args) {
-	  Main.javaIncrement(10,15);
+        Vehicle car = new Car();
+        car.show();
     }
 }
