@@ -2,26 +2,36 @@ package com.company;
 
 public class Main {
 
+   Main(){
+       System.out.println("main class");
+   }
 
-    public static void javaIncrement(int x,int y){
-          int z = y;
-        if(++x >10 && ++y <15){
+   private void mainGo(){
+       new MainIneer().innerGo();
+   }
 
-            ++x;
-        }
-        else {
-            /*here z will be equal to incremented value of y
-            * if we wrote the expression as z=y++ then z will be
-            * equal to before incremented value of y*/
-            z = ++y;
-            //z= y++;
-        }
+   class  MainIneer{
+       MainIneer(){
+           System.out.println("inner class of main");
+       }
 
-        System.out.println("x = " + x + " Y = " +y + " Z = " +z);
-    }
+       public void innerGo(){
+           System.out.println("inner go");
+       }
+   }
 
     public static void main(String[] args) {
-        Vehicle car = new Car();
-        car.show();
+        Main main= new Main();
+        main.mainGo();
     }
+
+    /*
+    * Instantiating the outer class
+      Outer_Demo outer = new Outer_Demo();
+
+      Instantiating the inner class
+      Outer_Demo.Inner_Demo inner = outer.new Inner_Demo();
+      System.out.println(inner.getNum());
+      *
+      * */
 }
