@@ -4,11 +4,16 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-      Vehicle vehicle = new Vehicle();
-      Car car = new Car();
-      vehicle.start();
+      Runnable vehicle = new Vehicle();
+      Runnable car = new Car();
+
+      Thread t1 = new Thread(vehicle);
+      Thread t2 = new Thread(car);
+
+
+      t1.start();
         try { Thread.sleep(10);} catch (Exception e){};
-      car.start();
+      t2.start();
 
     }
 

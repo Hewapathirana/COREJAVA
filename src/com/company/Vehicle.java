@@ -1,6 +1,6 @@
 package com.company;
 
-public class Vehicle extends Thread {
+public class Vehicle implements Runnable {
     public  void run(){
         for(int i =1;i<6;i++) {
             System.out.println("Vehicle");

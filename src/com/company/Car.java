@@ -1,6 +1,6 @@
 package com.company;
 
-public class Car extends Thread  {
+public class Car implements Runnable  {
 
     public  void run(){
         for(int i =1;i<6;i++) {
