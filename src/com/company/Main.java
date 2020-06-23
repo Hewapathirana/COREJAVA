@@ -3,7 +3,7 @@ package com.company;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //here we are using a anonymous class to implement the runnable functional interface
       Runnable vehicle = () -> {
@@ -29,6 +29,16 @@ public class Main {
       t1.start();
         try { Thread.sleep(10);} catch (Exception e){};
       t2.start();
+
+        System.out.println(t1.isAlive()); // true
+      //by using join, t1 and t2 threads telling main thread to hold until finish the t1 and t2
+        t1.join();
+        t2.join();
+
+        // isalive method can be used for check whether a thread is running or completed
+        System.out.println(t1.isAlive()); // false
+        // main thread will execute this
+        System.out.println("bye");
 
     }
 
